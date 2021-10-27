@@ -1,100 +1,131 @@
-/*VARIAVEIS */
-:root{
-    --cor-prim:#F9D84D;
-    --cor-prim-clara:#FFEC9C;
-    --cor-secun:#F94D58;
-    --cor-secun-clara:#FD9CA3;
-    --cor-fundo:#333333;
-    --cor-fundo-clara:#555555;
-    --cor-texto:#cccccc;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*Varáveis*/
+:root {
+    --cor-prim: #F9D84D;
+    --cor-prim-clara: #FD9CA3;
+    --cor-secun: #F94D58;
+    --cor-secun-clara: #FD9CA3;
+    --cor-fundo: #333333;
+    --cor-fundo-clara: #555555;
+    --cor-texto: #EEEEEE;
+    --fonte-texto: font-family: 'IBM Plex Sans', sans-serif;
+    --fonte-titulo: font-family: 'Playfair Display', serif;
 }
-
-
-/***** CSS RESET ******/
-* {
-    font-family: Calibri, Arial, sans-serif;
+/************* CSS reset ********************************/
+* { /*O "*" significa tudo*/
+    font-family: var(--fonte-texto);
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* a borda faz parte das dimensões do elemento */
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    box-sizing: border-box;  /*borda faz parte das dimensões do elemento*/
+    /*background-color: var(--cor-fundo);
+    color: var(--cor-texto)*/
+}
+/********************************************************/
 
-}
-/***************************************************************/
-header{
-    display:flex;
-    justify-content:center; /*centralização horizontal*/
-    align-items:center; /*centralização vertical*/
+header {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
     background-color: var(--cor-prim);
-    min-height: 50px; /*altura minima*/
-    flex-wrap: wrap; /*força a quebra de linhas entre elementos flex*/ 
+    min-height: 50px; /* altura mínima */
+    flex-wrap: wrap; /*força a quebra de linhas entre elementos flex*/
 }
-#img-logo{
+
+#img-logo {
     background-color: transparent;
 }
-nav{
-    display:flex;
-    justify-content:center; /*centralização horizontal*/
-    align-items:center; /*centralização vertical*/
+
+#menu-principal {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
     background-color: var(--cor-secun);
-    min-height: 25px; /*altura minima*/
+    min-height: 25px; /* altura mínima */
     width: 100%;
-    margin: 5px;
-}
-main{
-    display:flex;
-    justify-content:center; /*centralização horizontal*/
-    align-items:stretch; /*filhos com 100% da altura do pai*/
-    min-height: 200px; /*altura minima*/
-}
-footer{
-    display:flex;
-    justify-content:center; /*centralização horizontal*/
-    align-items:center; /*centralização vertical*/
-    background-color:var(--cor-fundo-clara);
-    min-height: 50px; /*altura minima*/
-}
-section{
-    display:flex;
-    justify-content:center; /*centralização horizontal*/
-    align-items:center; /*centralização vertical*/
-    flex-direction: column; /*itens filhos em coluna (na vertical) */
-    border: 1px solid indigo;
-    background-color:plum;
-    width: 75%;
-    margin: 5px;
     }
 
-aside{
-    display:flex;
-    justify-content:center; /*centralização horizontal*/
-    align-items:center; /*centralização vertical*/
-    border: 1px dashed dimgray;
-    background-color:lightgray;
-    width: 25%;
+#menu-principal ul {/*afesta a lista do menu principal*/
+    list-style: none; /*tira a decoração da lista*/
+    display: flex; /*Container flex - todos os itens filhos na horizontal*/
+}
+
+#menu-principal ul li {
+    height: 36px;
+    margin: 0 10px; /* 0 topo; 10 esquerda e direita*/
+    }
+
+#menu-principal ul li a {
+    font-family: var(--fonte-titulo);
+    display: flex;
+    height: 36px;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    background-color: var(--cor-secun);
+    transition: 300ms;/*afeta a velocidade dos efeitos - deve ser colocada no estado de repouso*/
+}
+
+#menu-principal ul li a:hover {/*efeito quando o mouse passa em cima*/
+    filter: brightness(1.4);/*muda o brilho (valores menores que 1, escurece, maiores que 1 clareia*/
+}
+
+main {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: stretch; /*filhos com 100% da altura do pai*/
+    min-height: 200px; /* altura mínima */
+}
+
+footer {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-color: var(--cor-fundo-clara);
+    min-height: 50px; /* altura mínima */
+}
+
+section {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    flex-direction: column; /*itens filhos em coluna na vertical*/
+    border: 1px solid indigo;
+    background-color: plum;
+    width: 75%;
     margin: 5px;
     
 }
-article{
-    display:flex;
-    justify-content:center; /*centralização horizontal*/
-    align-items:center; /*centralização vertical*/
+aside {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    border: 1px dashed gray;
+    background-color: lightgray;
+    width: 25%;
+    margin: 5px;
+    }
+
+article {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
     border: 1px solid sienna;
     background-color: linen;
     margin: 5px;
-    min-height: 50px;
+    min-height: 100px;
     width: 100%;
-    min-height: 100px;     
 }
 
 @media screen and (max-width: 600px) {
     main {
-        /*muda a direção dos filhos para coluna (vertical) */
+        /*muda a direção dos filhos para colunas (vertical)*/
         flex-direction: column;
-    } /*section e aside ficam com 100% de largura */
-    section, aside{
-
+        }
+    section {
         width: 100%;
     }
-    
+    aside {
+        width: 100%;
+    }
 }
