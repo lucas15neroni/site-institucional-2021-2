@@ -29,7 +29,7 @@ html {
 }
 header {
   display: flex;
-  justify-content: center;  /* centralização horizontal */
+  justify-content: space-between;  /* espaço intermediario */
   align-items: center;  /* centralização vertical */
   background-color: var(--cor-prim);
   min-height: 50px; /* altura mínima */
@@ -37,7 +37,39 @@ header {
 }
 #img-logo {
   background-color: transparent;
+  margin: 20px;
 }
+
+/*nav #social */
+#social ul {
+  list-style: none;
+  display: flex;
+  margin: 20px;
+}
+
+#social ul li a img{
+  width: 40px;
+  filter: brightness(0.225);
+}
+#social ul li a {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  color: var(--cor-fundo);
+  text-decoration: none;
+}
+#social ul li a span{
+  margin-left: 6px;
+  visibility: hidden;
+  width: 0;
+  transition: visibility 500ms, widht 0;
+}
+#social ul li a:hover span{
+  visibility: visible;
+  width: auto;
+}
+
 #menu-principal {
   display: flex;
   justify-content: center;  /* centralização horizontal */
@@ -121,7 +153,7 @@ section > h1 { /* O sinal de > indica que serão atingidos apenas
 }
 
 /* Regra para os títulos h1 que estão dentro dos articles */
-article > h1 {
+section > article > h1 {
   text-align: right;
   width: 100%;
   color: var(--cor-texto);
@@ -182,12 +214,36 @@ article > h1 {
 
 aside {
   display: flex;
-  justify-content: center;  /* centralização horizontal */
+  justify-content: left;  /*alinhamento inicial */
   align-items: center;  /* centralização vertical */
-  border: 1px dashed dimgray;
-  background-color: lightgrey;
+  background-color: var(--cor-fundo);
+  margin: 20px;
+  border-radius: 16px;
   width: 25%;
-  margin: 5px;
+  padding: 16px;
+  color: var(--cor-texto);
+  font-size: 1.2rem;
+  flex-direction: column;
+}
+/*links dentro do aside*/
+aside a{
+  color: var(--cor-prim-clara);
+  text-decoration: none; /*tira o sublinhado */
+}
+
+aside a:hover {
+  color: var(--cor-prim);
+  text-decoration:underline ;
+}
+/*textos dentro do aside*/
+aside article{
+  text-align: center;
+  margin: 50px 0 ;
+  padding: 30px 20px;
+  border: 3px groove var(--cor-texto);
+  border-radius: 8px;
+  
+  
 }
 article {
   display: flex;
@@ -200,17 +256,33 @@ article {
   width: 100%;
 }
 
-/* Regras para tela com largura de até 600px */
-@media screen and (max-width: 600px) {
+/**************************************************
+            regras de resposividade
+***************************************************/
 
-  main {
-    /* muda a direção dos filhos para coluna (vertical) */
-    flex-direction: column;
+/*dispositivos (celulares) pequenos */
+@media (max-widht: 576px){
+body{
+  border: 3px dashed limegreen;
+}
+}
+/* dispositivos (celulares) medios */
+@media (max-widht: 768px){
+  body{
+    border: 3px dashed aqua;
   }
-
-  /* section e aside ficam com 100% de largura */
-  section, aside {
-    width: 100%;
+}
+/*dispositivos (tablets) */
+@media (max-widht: 992px){
+  body{
+    border: 3px dashed yellow;
   }
 
 }
+/*computadores com tela pequena */
+@media (max-widht: 1200px){
+  body{
+    border: 3px dashed magenta;
+  }
+}
+/*o padrao do nosso CSS é para telas >1200px */
