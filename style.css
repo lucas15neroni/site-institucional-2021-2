@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Variáveis */
+/* VariÃ¡veis */
 :root {
   --cor-prim: #F9D84D;
   --cor-prim-clara: #FFEC9C;
@@ -18,39 +18,36 @@
   font-family: var(--fonte-texto);
   padding: 0;
   margin: 0;
-  box-sizing: border-box; /* a borda faz parte das dimensões do elemento */
+  box-sizing: border-box; /* a borda faz parte das dimensÃµes do elemento */
   /*background-color: var(--cor-fundo);
   color: var(--cor-texto);*/
 }
 /*************************************************/
 html {
   font-size: 16px;
-  scroll-behavior: smooth; /*rolagem suave */
+  scroll-behavior: smooth;
 }
 header {
   display: flex;
-  justify-content: space-between;  /* espaço intermediario */
-  align-items: center;  /* centralização vertical */
+  justify-content: space-between;  /* ajuste horizontal */
+  align-items: center;  /* ajuste vertical */
   background-color: var(--cor-prim);
-  min-height: 50px; /* altura mínima */
-  flex-wrap: wrap;  /* força a quebra de linhas entre elementos flex */
+  min-height: 50px; /* altura mÃ­nima */
+  flex-wrap: wrap;  /* forÃ§a a quebra de linhas entre elementos flex */
 }
 #img-logo {
   background-color: transparent;
   margin: 20px;
 }
 
-/*nav #social */
+/*nav #social*/
+
 #social ul {
   list-style: none;
   display: flex;
   margin: 20px;
 }
 
-#social ul li a img{
-  width: 40px;
-  filter: brightness(0.225);
-}
 #social ul li a {
   height: 40px;
   display: flex;
@@ -59,28 +56,35 @@ header {
   color: var(--cor-fundo);
   text-decoration: none;
 }
-#social ul li a span{
+
+#social ul li img {
+  width: 40px;
+  filter: brightness(0.225);
+}
+
+#social ul li a span {
   margin-left: 6px;
   visibility: hidden;
   width: 0;
-  transition: visibility 500ms, widht 0;
+  transition: visibility 500ms ease-out, width 0;
 }
-#social ul li a:hover span{
-  visibility: visible;
+
+#social ul li a:hover span {
   width: auto;
+  visibility: visible;
 }
 
 #menu-principal {
   display: flex;
-  justify-content: center;  /* centralização horizontal */
-  align-items: center;  /* centralização vertical */
+  justify-content: center;  /* centralizaÃ§Ã£o horizontal */
+  align-items: center;  /* centralizaÃ§Ã£o vertical */
   background-color: var(--cor-secun);
-  min-height: 25px; /* altura mínima */
+  min-height: 25px; /* altura mÃ­nima */
   width: 100%;
 }
 #menu-principal ul { /* Afeta o <ul> dentro de #menu-principal */
-  list-style: none; /* Tira a decoração dos itens da lista */
-  display: flex;  /* Container flex - todos os itens filhos na horizontal por padrão */
+  list-style: none; /* Tira a decoraÃ§Ã£o dos itens da lista */
+  display: flex;  /* Container flex - todos os itens filhos na horizontal por padrÃ£o */
 }
 #menu-principal ul li {
   height: 36px;
@@ -108,40 +112,43 @@ header {
 }
 main {
   display: flex;
-  justify-content: center;  /* centralização horizontal */
+  justify-content: center;  /* centralizaÃ§Ã£o horizontal */
   align-items: stretch;  /* filhos com 100% da altura do pai */
-  min-height: 200px; /* altura mínima */
+  min-height: 200px; /* altura mÃ­nima */
   background-color: var(--cor-fundo-clara);
 }
 footer {
   display: flex;
-  justify-content: space-around;  /* distribui o espaço entre os itens filhos */
-  align-items: center;  /* centralização vertical */
+  justify-content: space-around;  /* distribui espaço entre os itens filhos */
+  align-items: center;  /* centralizaÃ§Ã£o vertical */
   background-color: var(--cor-fundo);
-  min-height: 50px; /* altura mínima */
-  padding: 20px;
-  color:var(--cor-texto);
+  min-height: 50px; /* altura mÃ­nima */  
+  color: var(--cor-texto);
 }
-/*links dentro do footer */
-footer a{
-    color:var(--cor-prim);
-    text-decoration: none; /*sem sublinhado */
+
+footer a {
+    color: var(--cor-prim);
+    text-decoration: none;
+    transition: 200ms;
 }
-footer a:hover{
+
+footer a:hover {
     text-decoration: underline;
+    color: var(--cor-prim-clara)
 }
+
 section {
   display: flex;
-  justify-content: center;  /* centralização horizontal */
-  align-items: center;  /* centralização vertical */
+  justify-content: center;  /* centralizaÃ§Ã£o horizontal */
+  align-items: center;  /* centralizaÃ§Ã£o vertical */
   flex-direction: column; /* itens filhos em coluna (na vertical) */
   background-color: transparent;
   width: 75%;
   margin: 20px;
 }
 
-/* Regra para o título h1 que está dentro de section */
-section > h1 { /* O sinal de > indica que serão atingidos apenas
+/* Regra para o tÃ­tulo h1 que estÃ¡ dentro de section */
+section > h1 { /* O sinal de > indica que serÃ£o atingidos apenas
   os h1 FILHOS DIRETOS de section */
   text-align: left;
   width: 100%;
@@ -152,7 +159,7 @@ section > h1 { /* O sinal de > indica que serão atingidos apenas
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.4);
 }
 
-/* Regra para os títulos h1 que estão dentro dos articles */
+/* Regra para os tÃ­tulos h1 que estÃ£o dentro dos articles */
 section > article > h1 {
   text-align: right;
   width: 100%;
@@ -169,35 +176,35 @@ section > article > h1 {
   height: 360px;
   margin: 20px;
   border-radius: 16px;
-  
 }
 
-/*Regra para link de .cartao-carro */
-.cartao-carro a{
+/* Regra para link dentro de .cartao-carro */
+.cartao-carro a {
     text-decoration: none;
- }
+    transition: 300ms;
+}
 
- .cartao-carro a div {
-   transition: 400ms;
- }
+.cartao-carro a div {
+  transition: 300ms;
+}
 
-/*Regra para o link de .cartao-carro quando o mouse sobrevoa */
-.cartao-carro a:hover div{
+/* Regra para o link dentro de .cartao-carro quando o mouse o sobrevoa*/
+
+.cartao-carro a:hover div {
     filter: brightness(1.2);
     box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.15);
 }
 
-/*Regra para div interna de .cartao-carro */
+/* Regra para div dentro de .cartao-carro */
 .cartao-carro div {
     height: 360px;
     border-radius: 16px;
 }
+
 /* Regra para imagens dentro de .cartao-carro */
 .cartao-carro img {
   width: 100%;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  
+  margin-top: 16px;
 }
 
 .cartao-carro h1 {
@@ -214,75 +221,123 @@ section > article > h1 {
 
 aside {
   display: flex;
-  justify-content: left;  /*alinhamento inicial */
-  align-items: center;  /* centralização vertical */
+  justify-content: top;  /* ajuste horizontal */
+  align-items: center;  /* ajuste vertical */
   background-color: var(--cor-fundo);
-  margin: 20px;
-  border-radius: 16px;
   width: 25%;
+  margin: 20px;
   padding: 16px;
   color: var(--cor-texto);
   font-size: 1.2rem;
   flex-direction: column;
+  border-radius: 14px;
 }
+
 /*links dentro do aside*/
-aside a{
+
+aside a {
   color: var(--cor-prim-clara);
-  text-decoration: none; /*tira o sublinhado */
+  text-decoration: none;
 }
 
 aside a:hover {
   color: var(--cor-prim);
-  text-decoration:underline ;
+  text-decoration: underline;
 }
-/*textos dentro do aside*/
-aside article{
+
+aside article {
+  display: flex;
   text-align: center;
-  margin: 50px 0 ;
+  margin: 50px 0 50px 0;
   padding: 30px 20px;
-  border: 3px groove var(--cor-texto);
+  border-bottom: 3px groove var(--cor-texto);
+  border-top: 3px groove var(--cor-texto);
   border-radius: 8px;
-  
-  
 }
+
 article {
   display: flex;
-  justify-content: center;  /* centralização horizontal */
+  justify-content: center;  /* centralizaÃ§Ã£o horizontal */
   flex-wrap: wrap;
-  align-items: center;  /* centralização vertical */
+  align-items: center;  /* centralizaÃ§Ã£o vertical */
   background-color: transparent;
   margin: 5px;
   min-height: 100px;
   width: 100%;
 }
 
-/**************************************************
-            regras de resposividade
-***************************************************/
+/****************Regras de Responsividade***********************/
+/*Padrão*/
+@media (max-width: 1200px) {
+  body{
+    border: 3px dashed magenta}
+    #social ul li a span {
+      display: none; /*some com o elemento*/
+    }
 
-/*dispositivos (celulares) pequenos */
-@media (max-widht: 576px){
-body{
-  border: 3px dashed limegreen;
-}
-}
-/* dispositivos (celulares) medios */
-@media (max-widht: 768px){
+    main {
+      flex-direction: column;
+    }
+    /*section e aside passam a ter largura de 100%*/
+    section, aside {
+      width: calc(100% - 40px);/*Função que desconta as margens dos elementos e evita rolagem horizontal*/
+    }
+
+    aside {
+      flex-direction: row; /*deixa os articles lado a lado*/
+      align-items: stretch; /*Faz com que as alturas dos articles fiquem iguais*/
+      
+    }
+
+    aside article {
+      margin: 0 30px;
+    }
+}  
+/*Tablets*/
+
+@media (max-width: 992px) {
   body{
-    border: 3px dashed aqua;
+    border: 3px dashed aqua
   }
 }
-/*dispositivos (tablets) */
-@media (max-widht: 992px){
+
+
+/*Celulares Médios*/
+
+@media (max-width: 768px) {
   body{
-    border: 3px dashed yellow;
+    border: 3px dashed yellow
+  }
+  /*Recolher menu*/
+
+  aside {
+    flex-direction: column; /*deixa os articles lado a lado*/
+    align-items: flex-start; /*Faz com que as alturas dos articles fiquem iguais*/
+    
+  }
+
+  aside article {
+    margin: 30px 0;
+  }
+
+  footer {
+    flex-direction: column;/*empilhar os elementos*/
+  }
+
+  footer img, footer address {
+    margin-bottom: 20px;
   }
 
 }
-/*computadores com tela pequena */
-@media (max-widht: 1200px){
+
+
+/*Celulares Pequenos*/
+
+@media (max-width: 576px) {
   body{
-    border: 3px dashed magenta;
+    border: 3px dashed limegreen
+  }
+  header {
+    flex-direction: column;
   }
 }
-/*o padrao do nosso CSS é para telas >1200px */
